@@ -10,18 +10,20 @@ type InputProps = {
 const Input: React.FC<InputProps> = ({todoVm}) => {
     const [vm] = useState(() => new InputVM())
     return (
-        <form>
-            <textarea value={vm.value} onChange={(event) => {
+        <div className='todo-input-container'>
+            <textarea
+                className="todo-input"
+                value={vm.value}
+                onChange={(event) => {
                 vm.onChange(event.target.value)
             }} />
-            <button type='button' onClick={() => {
+            <button className='button-52' type='button' onClick={() => {
                 todoVm.addTodo(vm.value)
                 vm.onChange('')
-            }
-            }>
-                add
+            }}>
+                Добавить
             </button>
-        </form>
+        </div>
     );
 };
 

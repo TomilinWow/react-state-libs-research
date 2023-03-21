@@ -7,14 +7,16 @@ import TodoCard from '../../components/TodoCardMobX/TodoCard';
 const MobxTodoApp = () => {
     const [vm] = useState(() => new MobxTodoAppVM())
     return (
-        <div>
+        <div className='todo-container'>
             <h1>ToDo MobX</h1>
             <Input todoVm={vm} />
+
             {vm.todoList.map((todo) => {
                 return (
-                    <TodoCard todo={todo} todoVM={vm} />
+                    <TodoCard todo={todo} todoVM={vm} key={todo.id} />
                 )
             })}
+
         </div>
     );
 };

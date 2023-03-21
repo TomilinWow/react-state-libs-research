@@ -12,32 +12,62 @@ type TodoCardProps = {
 const TodoCard: React.FC<TodoCardProps> = ({ todo, todoVM }) => {
     const [vm] = useState(() => new TodoCardVM(todo.content))
     return (
-        <div>
-            {vm.isEditMode ?
-                <textarea value={vm.value} onChange={(event) => {
-                    vm.onChangeValue(event.target.value)
-                }} />
-                :
-                <label>
-                    <input type='checkbox' checked={todo.isDone} onChange={() => {
-                        todoVM.setIsDone(!todo.isDone, todo.id)
-                    }} />
-                    {todo.content}
-                </label>
-            }
+        <div className='todo-list'>
+            <div className="checkbox-wrapper-18">
+                <div className="round">
+                    <input
+                        type="checkbox"
+                        id={`checkbox-18-${todo.id}`}
+                        checked={todo.isDone}
+                        onChange={() => { todoVM.setIsDone(!todo.isDone, todo.id) }} />
+                    <label htmlFor={`checkbox-18-${todo.id}`}></label>
+                </div>
+            </div>
 
-            <span>{(new Date(todo.date)).toLocaleString()}</span>
-            <button onClick={() => { todoVM.deleteTodo(todo.id) }}>delete</button>
-            {vm.isEditMode ? <><button onClick={() => {
-                todoVM.editTodo(vm.value, todo.id)
-                vm.onChangeMode()
-            }}>submit</button>
-                <button onClick={() => {
-                    vm.onChangeValue(todo.content)
-                    vm.onChangeMode()
-                }}>cancel</button>
-            </> : <button onClick={() => { vm.onChangeMode() }}>edit</button>}
+            <div className='todo-card-container '>
 
+                {vm.isEditMode ?
+                    <textarea
+                        value={vm.value}
+                        onChange={(event) => { vm.onChangeValue(event.target.value) }}
+                    />
+                    :
+                    <div style={{ marginBlock: 'auto' }}>
+                        {todo.content}
+                    </div>
+                }
+
+                <div>
+                    <div className='todo-card-buttons'>
+                        {vm.isEditMode ?
+                            <>
+                                <button className='button ok' onClick={() => {
+                                    todoVM.editTodo(vm.value, todo.id)
+                                    vm.onChangeMode()
+                                }} >
+                                    ок
+                                </button>
+                                <button className='button' onClick={() => {
+                                    vm.onChangeValue(todo.content)
+                                    vm.onChangeMode()
+                                }} >
+                                    отменить
+                                </button>
+                            </>
+                            :
+                            <button className='button' onClick={() => { vm.onChangeMode() }}>
+                                изменить
+                            </button>
+                        }
+                        <button className='button delete' onClick={() => { todoVM.deleteTodo(todo.id) }}>
+                            удалить
+                        </button>
+                    </div>
+                    <div className='todo-date'>
+                        <div>{(new Date(todo.date)).toLocaleString()}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -12,7 +12,7 @@ class MobxTodoAppVM {
     }
 
     private static idGenerator = (): string => {
-        return `${(Math.random()*100)}-${(Date.now)}`
+        return `${(Math.random()*100)}-${(Date.now())}`
     }
 
     @action
@@ -44,7 +44,7 @@ class MobxTodoAppVM {
                 return {...todo, isDone}
             }
             return todo
-        })
+         })
     }
 }
 
