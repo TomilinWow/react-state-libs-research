@@ -1,9 +1,20 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
+import {RootState} from "../../store/index";
+import {Input} from "../../components/ReduxTodo/Input/Input";
+import {TodoCard} from "../../components/ReduxTodo/TodoCard/TodoCard";
+
 
 const ReduxTodoApp = () => {
+    const todoList = useSelector((state: RootState) => state.todos.todoList);
+
     return (
-        <div>
+        <div className='todo-container'>
             <h1>ToDo Redux</h1>
+            <Input  />
+
+            {todoList.map((todo: any) => {
+                return <TodoCard todo={todo} key={todo.id} />;
+            })}
         </div>
     );
 };
