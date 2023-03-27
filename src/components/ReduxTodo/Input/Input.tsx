@@ -1,13 +1,8 @@
-import { useState } from 'react';
-import {useAppDispatch} from "../../../hooks/UseAppRedux";
-import {addTodo} from "../../../store/slices/todoSlice/todoSlice";
+import {FC, useState} from 'react';
+import {addTodo} from "../../../store/todo/slices/todoSlice/todoSlice";
+import {useAppDispatch} from "../../../store/todo/index";
 
-
-type InputProps = {
-
-};
-
-export const Input: React.FC<InputProps> = () => {
+export const Input: FC = () => {
     const dispatch = useAppDispatch()
     const [value, setValue] = useState('');
 

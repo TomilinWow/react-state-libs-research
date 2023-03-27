@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import {RootState} from "../../store/index";
+import {RootState} from "../../store/todo";
 import {Input} from "../../components/ReduxTodo/Input/Input";
 import {TodoCard} from "../../components/ReduxTodo/TodoCard/TodoCard";
 

@@ -1,7 +1,7 @@
 import {Todo} from "../../../types/common";
 import {FC, useState} from "react";
-import {useAppDispatch} from "../../../hooks/UseAppRedux";
-import {deleteTodo, editTodo, setIsDone} from "../../../store/slices/todoSlice/todoSlice";
+import {deleteTodo, editTodo, setIsDone} from "../../../store/todo/slices/todoSlice/todoSlice";
+import {useAppDispatch} from "../../../store/todo/index";
 
 type TodoCardProps = {
     todo: Todo;
