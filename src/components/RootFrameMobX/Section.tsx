@@ -34,10 +34,11 @@ const SectionInner: React.FC<ISectionInnerProps> = ({ x, y, section }) => {
     let offsetY = 0;
     for (const child of section.sections) {
         if (child.nodeType === "section") {
-            childSections.push(<SectionInner section={child} x={offsetX} y={offsetY} />);
+            childSections.push(<SectionInner key={child.id} section={child} x={offsetX} y={offsetY} />);
         } else {
             childSections.push(
                 <Devider
+                    key={child.id}
                     width={child.width}
                     height={child.height}
                     x={offsetX}

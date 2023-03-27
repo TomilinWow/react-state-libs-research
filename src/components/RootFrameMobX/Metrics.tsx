@@ -60,6 +60,7 @@ const Metrics: React.FC = () => {
     function processSection(sec: Section, verticalPos: IPos, horizontalPos: IPos) {
         verticalComponents.push(
             <VerticalMetric
+                key={sec.id}
                 height={sec.height}
                 x={verticalPos.x}
                 y={verticalPos.y}
@@ -67,6 +68,7 @@ const Metrics: React.FC = () => {
         );
         horizontalComponents.push(
             <HorizontalMetric
+                key={sec.id}
                 x={horizontalPos.x}
                 y={horizontalPos.y}
                 width={sec.width}
