@@ -219,7 +219,7 @@ export const AppProvider:FC<AppProviderType> = ({ children }) => {
                 type: "none",
                 splitDirection: null,
                 sections: [],
-                frameSize: 50,
+                frameSize: 0,
             },
             {
                 nodeType: "devider",
@@ -236,7 +236,7 @@ export const AppProvider:FC<AppProviderType> = ({ children }) => {
                 type: "none",
                 splitDirection: null,
                 sections: [],
-                frameSize: 50,
+                frameSize: 0,
             }
         );
         setSelectedSectionId(null);

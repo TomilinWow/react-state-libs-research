@@ -134,7 +134,7 @@ const storeSlice = createSlice({
                         type: "none",
                         splitDirection: null,
                         sections: [],
-                        frameSize: 50,
+                        frameSize: 0,
                     },
                     {
                         nodeType: "devider",
@@ -151,7 +151,7 @@ const storeSlice = createSlice({
                         type: "none",
                         splitDirection: null,
                         sections: [],
-                        frameSize: 50,
+                        frameSize: 0,
                     }
                 );
             }
