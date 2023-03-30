@@ -5,17 +5,17 @@ import SectionEdit from "../../components/ContextPixel/SectionEdit";
 import RootFrame from "../../components/ContextPixel/RootFrame";
 
 const ContextPixelApp = () => {
-
-
     return (
-        <AppProvider>
-            <h1>Window ContextAPI</h1>
-            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
-                <WeatherCard />
-                <SectionEdit />
-                <RootFrame />
-            </div>
-        </AppProvider>
+        <div className='window-container'>
+            <AppProvider>
+                <h1>Window ContextAPI</h1>
+                <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
+                    <WeatherCard />
+                    <SectionEdit />
+                    <RootFrame />
+                </div>
+            </AppProvider>
+        </div>
     );
 };
 

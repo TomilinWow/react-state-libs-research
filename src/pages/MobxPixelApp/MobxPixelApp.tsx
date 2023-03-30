@@ -7,14 +7,16 @@ import { observer } from 'mobx-react-lite';
 
 const MobxPixelApp = () => {
     return (
-        <StoresProvider value={stores}>
-            <h1>Window MobX</h1>
-            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
-                <WeatherCard />
-                <SectionEdit />
-                <RootFrame />
-            </div>
-        </StoresProvider>
+        <div className='window-container'>
+            <StoresProvider value={stores}>
+                <h1>Window MobX</h1>
+                <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
+                    <WeatherCard />
+                    <SectionEdit />
+                    <RootFrame />
+                </div>
+            </StoresProvider>
+        </div>
     );
 };
 

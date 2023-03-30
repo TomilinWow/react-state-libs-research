@@ -33,8 +33,8 @@ const SectionEdit: React.FC = () => {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFrameSizeChange(e)}
                 />
             </div>
-            <button onClick={() => handleVerticalSplit()}>Split vertical</button>
-            <button onClick={() => handleHorizontalSplit()}>Split horizontal</button>
+            <button className="button-1" onClick={() => handleVerticalSplit()}>Split vertical</button>
+            <button className="button-2" onClick={() => handleHorizontalSplit()}>Split horizontal</button>
         </div>
     );
 };

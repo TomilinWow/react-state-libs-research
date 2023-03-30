@@ -33,8 +33,8 @@ const SectionEdit: React.FC = () => {
             />
         </div>
         <div style={{ margin: 10 }}>
-        <button onClick={() => store.splitCurrentSection("vertical")}>Split vertical</button>
-        <button onClick={() => store.splitCurrentSection("horizontal")}>Split horizontal</button></div>
+        <button className="button-1" onClick={() => store.splitCurrentSection("vertical")}>Split vertical</button>
+        <button className="button-2" onClick={() => store.splitCurrentSection("horizontal")}>Split horizontal</button></div>
     </div>
 }
 
