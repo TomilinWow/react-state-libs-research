@@ -12,7 +12,7 @@ export const Input: FC = () => {
     };
 
     return (
-        <div className="todo-input-container">
+        <div id='todo-input-container' className="todo-input-container">
             <textarea className="todo-input" value={value} onChange={(event) => setValue(event.target.value)} />
             <button className="button-52" type="button" onClick={handleAddTodo}>
                 Добавить

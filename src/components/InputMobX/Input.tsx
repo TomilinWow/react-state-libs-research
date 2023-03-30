@@ -10,7 +10,7 @@ type InputProps = {
 const Input: React.FC<InputProps> = ({todoVm}) => {
     const [vm] = useState(() => new InputVM())
     return (
-        <div className='todo-input-container'>
+        <div id='todo-input-container' className='todo-input-container'>
             <textarea
                 className="todo-input"
                 value={vm.value}

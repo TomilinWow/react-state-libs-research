@@ -38,11 +38,12 @@ export const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
 
                 {isEditMode ?
                     <textarea
+                        id='input-edit'
                         value={value}
                         onChange={(event) => setValue(event.target.value)}
                     />
                     :
-                    <div style={{ marginBlock: 'auto' }}>
+                    <div id='content' style={{ marginBlock: 'auto' }}>
                         {todo.content}
                     </div>
                 }
@@ -62,7 +63,7 @@ export const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
                                 </button>
                             </>
                             :
-                            <button className='button' onClick={handleEdit}>
+                            <button  className='button edit' onClick={handleEdit}>
                                 изменить
                             </button>
                         }

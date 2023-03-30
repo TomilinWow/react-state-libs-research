@@ -10,12 +10,13 @@ const MobxTodoApp = () => {
         <div className='todo-container'>
             <h1>ToDo MobX</h1>
             <Input todoVm={vm} />
-
+            <div className="todo-list-all">
             {vm.todoList.map((todo) => {
                 return (
                     <TodoCard todo={todo} todoVM={vm} key={todo.id} />
                 )
             })}
+            </div>
 
         </div>
     );

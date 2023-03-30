@@ -50,9 +50,9 @@ export const TodoCard: FC<TodoCardProps> = ({ todo }) => {
 
             <div className="todo-card-container ">
                 {isEditMode ? (
-                    <textarea value={value} onChange={(event) => setValue(event.target.value)} />
+                    <textarea id="input-edit" value={value} onChange={(event) => setValue(event.target.value)} />
                 ) : (
-                    <div style={{ marginBlock: 'auto' }}>{todo.content}</div>
+                        <div id="content" style={{ marginBlock: 'auto' }}>{todo.content}</div>
                 )}
 
                 <div>
@@ -67,7 +67,7 @@ export const TodoCard: FC<TodoCardProps> = ({ todo }) => {
                                 </button>
                             </>
                         ) : (
-                            <button className="button" onClick={handleEdit}>
+                            <button className="button edit" onClick={handleEdit}>
                                 изменить
                             </button>
                         )}

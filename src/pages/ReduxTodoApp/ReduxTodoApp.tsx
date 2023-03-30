@@ -10,11 +10,12 @@ const ReduxTodoApp = () => {
     return (
         <div className='todo-container'>
             <h1>ToDo Redux</h1>
-            <Input  />
-
+            <Input />
+            <div className="todo-list-all">
             {todoList.map((todo: any) => {
                 return <TodoCard todo={todo} key={todo.id} />;
             })}
+            </div>
         </div>
     );
 };

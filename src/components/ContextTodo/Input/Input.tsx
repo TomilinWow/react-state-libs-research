@@ -11,13 +11,13 @@ export const Input = () => {
     }, [addTodo, value]);
 
     return (
-        <div className="todo-input-container">
+        <div id='todo-input-container' className="todo-input-container">
       <textarea
           className="todo-input"
           value={value}
           onChange={(event) => setValue(event.target.value)}
       />
-            <button className="button-52" type="button" onClick={handleSubmit}>
+            <button id='button' className="button-52" type="button" onClick={handleSubmit}>
                 Добавить
             </button>
         </div>

@@ -54,9 +54,11 @@ const ContextTodoApp = () => {
                 value={{ todoList, addTodo, deleteTodo, editTodo, setIsDone }}
             >
                 <Input />
+                <div className="todo-list-all">
                 {todoList.map((todo) => (
                     <TodoCard todo={todo} key={todo.id} />
                 ))}
+                </div>
             </TodoContext.Provider>
         </div>
     );

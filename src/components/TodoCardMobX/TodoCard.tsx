@@ -28,11 +28,12 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo, todoVM }) => {
 
                 {vm.isEditMode ?
                     <textarea
+                        id="input-edit"
                         value={vm.value}
                         onChange={(event) => { vm.onChangeValue(event.target.value) }}
                     />
                     :
-                    <div style={{ marginBlock: 'auto' }}>
+                    <div id='content' style={{ marginBlock: 'auto' }}>
                         {todo.content}
                     </div>
                 }
@@ -55,7 +56,7 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo, todoVM }) => {
                                 </button>
                             </>
                             :
-                            <button className='button' onClick={() => { vm.onChangeMode() }}>
+                            <button className='button edit' onClick={() => { vm.onChangeMode() }}>
                                 изменить
                             </button>
                         }
