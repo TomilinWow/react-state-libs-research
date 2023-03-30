@@ -65,6 +65,7 @@ const Metrics = () => {
     function processSection(sec: any, verticalPos: any, horizontalPos: any) {
         verticalComponents.push(
             <VerticalMetric
+                key={sec.id}
                 height={sec.height}
                 x={verticalPos.x}
                 y={verticalPos.y}
@@ -72,6 +73,7 @@ const Metrics = () => {
         );
         horizontalComponents.push(
             <HorizontalMetric
+                key={sec.id}
                 x={horizontalPos.x}
                 y={horizontalPos.y}
                 width={sec.width}
